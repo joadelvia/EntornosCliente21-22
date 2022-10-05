@@ -3,7 +3,7 @@ const emailEl = document.querySelector('#email');
 const passwordEl = document.querySelector('#password');
 const confirmPasswordEl = document.querySelector('#confirm-password');
 const sexEl = document.querySelectorAll('#sex');
-const ageEl = document.queryCommandValue('#age');
+const ageEl = document.querySelector('#age');
 const conditionsEl = document.querySelector('#conditions');
 const form = document.querySelector('#signup');
 
@@ -112,8 +112,15 @@ const isCheckedRadio = radios => {
     return valid;
 }
 
+// const isCheckedCheckbox = checkbox => {
+//     return checkbox.checked;
+// }
 const isCheckedCheckbox = checkbox => checkbox.checked;
 const isRequired = value => value === '' ? false : true;
+// const isRequired = value => {
+//     if(value==='') return false;
+//     else return true;
+// }
 const isBetween = (length, min, max) => length < min || length > max ? false : true;
 
 
@@ -164,7 +171,7 @@ form.addEventListener('submit', function (e) {
 
     // submit to the server if the form is valid
     if (isFormValid) {
-
+        e.submit();
     }
 });
 
