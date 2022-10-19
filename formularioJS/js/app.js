@@ -2,7 +2,9 @@ const usernameEl = document.querySelector('#username');
 const emailEl = document.querySelector('#email');
 const passwordEl = document.querySelector('#password');
 const confirmPasswordEl = document.querySelector('#confirm-password');
-
+const sexEl = document.querySelectorAll('#sex');
+const ageEl = document.querySelector('#age');
+const conditionsEl = document.querySelector('#conditions');
 const form = document.querySelector('#signup');
 
 
@@ -77,6 +79,19 @@ const checkConfirmPassword = () => {
     return valid;
 };
 
+const checkSex = () => {
+    let valid = isCheckedRadio(sexEl);
+    if (!valid) showError(sexEl[0], 'You must check a sex');
+    else showSuccess(sexEl[0]);
+    return valid;
+}
+
+const checkConditions = () => {
+    let valid =isCheckedCheckbox(conditionsEl);
+    if (!valid) showError(conditionsEl, 'You must accept the conditions');
+    else showSuccess(conditionsEl);
+}
+
 const isEmailValid = (email) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -87,7 +102,25 @@ const isPasswordSecure = (password) => {
     return re.test(password);
 };
 
+const isCheckedRadio = radios => {
+    let valid=false;
+    for (let i=0;i<radios.length;i++) {
+        if (radios[i].checked){
+            valid = true;  
+        }
+    }
+    return valid;
+}
+
+// const isCheckedCheckbox = checkbox => {
+//     return checkbox.checked;
+// }
+const isCheckedCheckbox = checkbox => checkbox.checked;
 const isRequired = value => value === '' ? false : true;
+// const isRequired = value => {
+//     if(value==='') return false;
+//     else return true;
+// }
 const isBetween = (length, min, max) => length < min || length > max ? false : true;
 
 
@@ -125,16 +158,20 @@ form.addEventListener('submit', function (e) {
     let isUsernameValid = checkUsername(),
         isEmailValid = checkEmail(),
         isPasswordValid = checkPassword(),
-        isConfirmPasswordValid = checkConfirmPassword();
+        isConfirmPasswordValid = checkConfirmPassword(),
+        isSexChecked = checkSex(),
+        isConditionsChecked = checkConditions();
 
     let isFormValid = isUsernameValid &&
         isEmailValid &&
         isPasswordValid &&
-        isConfirmPasswordValid;
+        isConfirmPasswordValid &&
+        isSexChecked &&
+        isConditionsChecked;
 
     // submit to the server if the form is valid
     if (isFormValid) {
-
+        e.submit();
     }
 });
 
@@ -166,6 +203,12 @@ form.addEventListener('input', function (e) {
             break;
         case 'confirm-password':
             checkConfirmPassword();
+            break;
+        case 'sex':
+            checkSex();
+            break;
+        case 'conditions':
+            checkConditions();
             break;
     }
 });
