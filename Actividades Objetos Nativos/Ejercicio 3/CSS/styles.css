@@ -1,0 +1,42 @@
+* {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(66, 66, 66);
+}
+
+input {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 10px;
+    margin: 5px;
+}
+
+#box-1 {
+    margin-top: 150px;
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input:hover {
+    background-color: white;
+    color: black;
+    transition: 1s;
+}
+
+#box-2 {
+    padding: 30px;
+}
+
+#google-box {
+    margin-top: 20px;
+    text-align: center;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}

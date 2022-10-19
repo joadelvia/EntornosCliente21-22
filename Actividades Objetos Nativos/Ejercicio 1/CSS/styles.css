@@ -1,0 +1,27 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    color: white;
+}
+
+#openWindow {
+    width: 400px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.116);
+    border-radius: 10px;
+    border: 1px dashed white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15em;
+}
+
+#openWindow p {
+    margin-left: 109px;
+    margin-top: 63px;
+}
+
+body {
+    background-color: rgb(16, 0, 37);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios fechas</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <h1>Fechas y horas</h1>
+    <hr>
+    <div id="container">
+        <div id="box-1">
+            <h1>Fecha completa</h1>
+            <input id="campoDataTime" type="datetime-local">
+            <p id="fechaResultado">Indique una fecha</p>
+        </div>
+        <div id="box-2">
+            <h1>Calendario</h1>
+            <div class="inputs">
+                <input id="month" type="text" placeholder="Octubre">
+                <input id="year" type="number" placeholder="2021">
+            </div>
+            <input id="botonCalendario" type="button" value="Obtener calendario">
+        </div>
+        <div id="box-3">
+            <h1>Obtener fecha de un pago retrasado</h1>
+            <div class="inputs">
+                <input id="fecha" type="date">
+                <input id="diasDeRetraso" type="number" placeholder="Inserte días de retraso">
+            </div>
+            <input id="pagoRetrasado" type="button" value="Calcular fecha del pago">
+            <p id="pagoRetrasadoResultado">Para comenzar, inserte una fecha</p>
+        </div>
+        <div id="box-4">
+            <h1>Cronómetro</h1>
+            <p id="cronometro">Cargando...</p>
+        </div>
+        <div id="box-5">
+            <h1>Alarma</h1>
+            <p id="horaActual">Cargando...</p>
+            <input id="horaAlarma" type="datetime-local">
+            <input id="alarmaSwitch" type="button" value="Habilitar alarma" disabled>
+        </div>
+    </div>
+    <script src="JS/app.js"></script>
+</body>
+</html>
